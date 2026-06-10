@@ -120,6 +120,14 @@ void clearCanvas(int rows, int cols, char canvas[rows][cols])
     }
 }
 
+void modifyPoint(int rows, int cols, char canvas[rows][cols], int r, int c)
+{
+    if(r >= 0 && r < rows && c >= 0 && c < cols)
+    {
+        canvas[r][c] = '*';
+    }
+}
+
 int main()
 {
     int rows, cols;
@@ -144,9 +152,10 @@ int main()
         printf("3. Draw line\n");
         printf("4. Draw Triangle\n");
         printf("5. Draw Circle\n");
-        printf("6. Clear Canvas\n");
-        printf("7. Display Canvas\n");
-        printf("8. Exit\n");
+        printf("6. Modify Point\n")
+        printf("7. Clear Canvas\n");
+        printf("8. Display Canvas\n");
+        printf("9. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
 
@@ -213,16 +222,27 @@ int main()
 
             case 6:
             {
+                int r, c;
+
+                printf("Enter row and column to modify: ");
+                scanf("%d %d", &r, &c);
+
+                modifyPoint(rows, cols, canvas, r, c);
+                break;
+            }
+
+            case 7:
+            {
                 clearCanvas(rows, cols, canvas);
                 printf("Canvas cleared!\n");
                 break;
             }
 
-            case 7:
+            case 8:
                 displayCanvas(rows, cols, canvas);
                 break;
 
-            case 8:
+            case 9:
                 printf("Exiting...\n");
                 break;
 
@@ -230,7 +250,7 @@ int main()
                 printf("Invalid choice!\n");
         }
 
-    } while(choice != 8);
+    } while(choice != 9);
 
     return 0;
 }
