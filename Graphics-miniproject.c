@@ -152,7 +152,7 @@ int main()
         printf("3. Draw line\n");
         printf("4. Draw Triangle\n");
         printf("5. Draw Circle\n");
-        printf("6. Modify Point\n")
+        printf("6. Modify Point\n");
         printf("7. Clear Canvas\n");
         printf("8. Display Canvas\n");
         printf("9. Exit\n");

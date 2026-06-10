@@ -1,0 +1,37 @@
+AI Prompts Used During Development
+
+1. How can a menu-driven 2D graphics editor be implemented in C using a character array as the canvas?
+
+2. What would be a good stage-wise plan for developing this project?
+
+3. How can a canvas size be taken as input from the user?
+
+4. What is a good way to represent a drawing canvas using a 2D character array?
+
+5. How can the canvas be initialized with default characters and displayed neatly on the screen?
+
+6. How should the program be organized using separate functions for better functionality?
+
+7. How can a system be designed to support multiple drawing operations?
+
+8. What logic can be used to place individual points on the canvas?
+
+9. How can rectangular shapes be drawn on a character-based canvas?
+
+10. What are some ways for line drawing between two coordinates?
+
+11. How can a triangle be drawn using simple loops and calculations?
+
+12. How can circular shapes be drawn within a 2D character array?
+
+13. What is a suitable method for clearing or resetting the canvas?
+
+14. How can existing elements on the canvas be modified or updated after they have been drawn?
+
+15. What methods can be used to validate user input and prevent errors?
+
+16. How can the project be compiled and tested in a GitHub Codespace?
+
+17. What are compilation errors in C and how can they be resolved?
+
+18. How can the repository structure and commit history be organized to reflect the development process?
