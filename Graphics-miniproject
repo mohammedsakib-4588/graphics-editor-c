@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int rows, cols;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
+
+    printf("\nCanvas Size: %d x %d\n", rows, cols);
+
+    return 0;
+}
