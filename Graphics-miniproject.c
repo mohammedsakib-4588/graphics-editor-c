@@ -91,6 +91,24 @@ void drawTriangle(int rows, int cols, char canvas[rows][cols],
     }
 }
 
+void drawCircle(int rows, int cols, char canvas[rows][cols],
+                 int centerR, int centerC, int radius)
+{
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            int dist = (i - centerR) * (i - centerR) +
+                       (j - centerC) * (j - centerC);
+
+            if(dist <= radius * radius)
+            {
+                canvas[i][j] = '*';
+            }
+        }
+    }
+}
+
 int main()
 {
     int rows, cols;
@@ -114,8 +132,9 @@ int main()
         printf("2. Draw Rectangle\n");
         printf("3. Draw line\n");
         printf("4. Draw Triangle\n");
-        printf("5. Display Canvas\n");
-        printf("6. Exit\n");
+        printf("5. Draw Circle\n");
+        printf("6. Display Canvas\n");
+        printf("7. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
 
@@ -167,10 +186,24 @@ int main()
             }
 
             case 5:
+            {
+                int r, c, radius;
+
+                printf("Enter center row and column: ");
+                scanf("%d %d", &r, &c);
+
+                printf("Enter radius: ");
+                scanf("%d", &radius);
+
+                drawCircle(rows, cols, canvas, r, c, radius);
+                break;
+            }
+
+            case 6:
                 displayCanvas(rows, cols, canvas);
                 break;
 
-            case 6:
+            case 7:
                 printf("Exiting...\n");
                 break;
 
@@ -178,7 +211,7 @@ int main()
                 printf("Invalid choice!\n");
         }
 
-    } while(choice != 6);
+    } while(choice != 7);
 
     return 0;
 }
