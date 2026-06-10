@@ -31,6 +31,21 @@ void drawPoint(int rows, int cols, char canvas[rows][cols], int r, int c)
         canvas[r][c] = '*';
     }
 }
+
+void drawRectangle(int rows, int cols, char canvas[rows][cols],
+                   int r, int c, int h, int w)
+{
+    for(int i = r; i < r + h && i < rows; i++)
+    {
+        for(int j = c; j < c + w && j < cols; j++)
+        {
+            if(i >= 0 && j >= 0)
+            {
+                canvas[i][j] = '*';
+            }
+        }
+    }
+}
 int main()
 {
     int rows, cols;
@@ -63,12 +78,26 @@ int main()
                 scanf("%d %d", &r, &c);
                 drawPoint(rows, cols, canvas, r, c);
                 break;
-
+            {
             case 2:
+
+                int r, c, h, w;
+
+                printf("Enter start row and column: ");
+                scanf("%d %d", &r, &c);
+
+                printf("Enter height and width: ");
+                scanf("%d %d", &h, &w);
+
+                drawRectangle(rows, cols, canvas, r, c, h, w);
+                break;
+
+            }
+            case 3:
                 displayCanvas(rows, cols, canvas);
                 break;
 
-            case 3:
+            case 4:
                 printf("Exiting...\n");
                 break;
 
@@ -76,7 +105,7 @@ int main()
                 printf("Invalid choice!\n");
         }
 
-    } while(choice != 3);
+    } while(choice != 4);
 
     return 0;
 }
