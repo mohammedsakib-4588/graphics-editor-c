@@ -109,6 +109,17 @@ void drawCircle(int rows, int cols, char canvas[rows][cols],
     }
 }
 
+void clearCanvas(int rows, int cols, char canvas[rows][cols])
+{
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            canvas[i][j] = '_';
+        }
+    }
+}
+
 int main()
 {
     int rows, cols;
@@ -133,8 +144,9 @@ int main()
         printf("3. Draw line\n");
         printf("4. Draw Triangle\n");
         printf("5. Draw Circle\n");
-        printf("6. Display Canvas\n");
-        printf("7. Exit\n");
+        printf("6. Clear Canvas\n");
+        printf("7. Display Canvas\n");
+        printf("8. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
 
@@ -200,10 +212,17 @@ int main()
             }
 
             case 6:
+            {
+                clearCanvas(rows, cols, canvas);
+                printf("Canvas cleared!\n");
+                break;
+            }
+
+            case 7:
                 displayCanvas(rows, cols, canvas);
                 break;
 
-            case 7:
+            case 8:
                 printf("Exiting...\n");
                 break;
 
@@ -211,7 +230,7 @@ int main()
                 printf("Invalid choice!\n");
         }
 
-    } while(choice != 7);
+    } while(choice != 8);
 
     return 0;
 }
