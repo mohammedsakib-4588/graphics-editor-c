@@ -95,7 +95,7 @@ int main()
         printf("1. Draw Point\n");
         printf("2. Draw Rectangle\n");
         printf("3. Draw line\n");
-        printf("4. Display Canvas\n")
+        printf("4. Display Canvas\n");
         printf("5. Exit\n");
         printf("Enter choice: ");
         scanf("%d", &choice);
